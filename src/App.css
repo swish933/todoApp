@@ -1,0 +1,43 @@
+.App {
+	height: 100vh;
+	width: 100%;
+	position: absolute;
+	display: flex;
+	justify-content: center;
+
+	/* font-size: 1.2em; */
+}
+
+.b-red {
+	border: 1px solid red;
+}
+
+.container {
+	margin-top: 3em;
+	width: 85%;
+	padding: 1em;
+	max-width: 35em;
+}
+
+.bg-dark-mode {
+	background-image: url(./images/bg-mobile-dark.jpg);
+	background-color: hsl(235, 21%, 11%);
+	background-repeat: no-repeat;
+	background-size: 100% 37%;
+}
+
+.bg-light-mode {
+	background-image: url(./images/bg-mobile-light.jpg);
+	background-color: #fff;
+	background-repeat: no-repeat;
+	background-size: 100% 37%;
+}
+
+@media (min-width: 674px) {
+	.bg-dark-mode {
+		background-image: url(./images/bg-desktop-dark.jpg);
+	}
+	.bg-light-mode {
+		background-image: url(./images/bg-desktop-light.jpg);
+	}
+}

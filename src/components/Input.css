@@ -1,0 +1,41 @@
+.Input {
+	background-color: hsl(237, 14%, 26%);
+	display: flex;
+	align-items: center;
+	height: 3em;
+	margin-bottom: 2em;
+	border-radius: 0.25em;
+}
+
+.Input input[type='checkbox'] {
+	visibility: hidden;
+	width: 1.1em;
+	height: 1.1em;
+	position: absolute;
+	left: -2px;
+	top: -1px;
+}
+
+.disabled-checkbox {
+	width: 1.2em;
+	height: 1.2em;
+	background-color: hsl(237, 14%, 26%);
+	margin: 0 0.8em;
+	border-radius: 100%;
+	border: 1px solid gray;
+	position: relative;
+}
+
+.Input input[type='text'] {
+	background-color: hsl(237, 14%, 26%);
+	border: none;
+	flex-basis: 92%;
+	height: 2.5em;
+	width: inherit;
+	outline-color: hsl(235, 28%, 76%);
+	outline-width: 1em;
+	/* outline-style: dashed; */
+	color: whitesmoke;
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 1em;
+}
