@@ -1,12 +1,27 @@
+.Todos {
+	border: 1px solid salmon;
+	border-radius: 0.25em;
+	overflow: hidden;
+}
+
 .Todo {
 	display: flex;
 	align-items: center;
 	background-color: hsl(237, 14%, 26%);
 	border-bottom: 1px solid gray;
 	height: 3em;
+	transition: width height 0.5s ease-in;
 	font-weight: 350;
+
 	color: #fff;
 }
+
+.Todo:last-of-type {
+	border-bottom: none;
+}
+
+/* .Todo:hover {
+} */
 
 input[type='checkbox'] {
 	visibility: hidden;

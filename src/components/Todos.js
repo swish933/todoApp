@@ -1,9 +1,47 @@
-import React from 'react';
+import Todo from './Todo';
+import './Todo.css';
 
 const Todos = () => {
 	return (
-		<div>
-			<p>todos</p>
+		<div className='Todos'>
+			<Todo />
+			<Todo />
+			<Todo />
+			<Todo />
+			<Todo />
+			<Todo />
+			<Todo />
+			<Todo />
+			<Todo />
+			<Todo />
+			<Todo />
+			<Todo />
+			<Todo />
+			<Todo />
+			<Todo />
+			<Todo />
+			<Todo />
+			<Todo />
+			<Todo />
+			<Todo />
+			<Todo />
+			<Todo />
+			<Todo />
+			<Todo />
+			<Todo />
+			<Todo />
+			<Todo />
+			<Todo />
+			<Todo />
+			<Todo />
+			<Todo />
+			<Todo />
+			<Todo />
+			<Todo />
+			<Todo />
+			<Todo />
+			<Todo />
+			<Todo />
 		</div>
 	);
 };
