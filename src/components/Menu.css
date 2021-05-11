@@ -1,5 +1,5 @@
 .desktop-dash {
-	color: var(--clr-lightblue);
+	color: var(--clr-lightgray);
 	display: none;
 	background-color: var(--clr-darkblue);
 	justify-content: space-around;
@@ -10,18 +10,25 @@
 }
 
 .mobile-dash .upper {
-	color: var(--clr-lightblue);
+	color: var(--clr-lightgray);
 	display: flex;
 	justify-content: space-around;
+	align-items: center;
 	background-color: var(--clr-darkblue);
+	border-bottom-left-radius: 0.3em;
+	border-bottom-right-radius: 0.3em;
 	font-size: 0.9em;
+}
+
+.upper div:nth-child(1) {
+	margin-right: 11em;
 }
 
 .mobile-menu {
 	margin-top: 2em;
 	display: grid;
 	grid-template: 1fr /1fr 1fr 1fr;
-	color: var(--clr-lightblue);
+	color: var(--clr-lightgray);
 	background-color: var(--clr-darkblue);
 	font-size: 1em;
 	border-radius: 0.3em;
@@ -34,11 +41,15 @@
 
 .todo-filters {
 	display: flex;
-	/* border: 2px solid slateblue; */
 }
 
 .todo-filters p {
 	padding: 0 0.6em;
+}
+
+.todo-filters p:hover,
+.upper div:nth-child(2):hover {
+	color: var(--clr-lightblue);
 }
 
 @media (min-width: 550px) {
