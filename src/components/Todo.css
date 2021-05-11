@@ -1,27 +1,23 @@
 .Todos {
-	border: 1px solid salmon;
-	border-radius: 0.25em;
+	border-top-left-radius: 0.3em;
+	border-top-right-radius: 0.3em;
 	overflow: hidden;
 }
 
 .Todo {
 	display: flex;
 	align-items: center;
-	background-color: hsl(237, 14%, 26%);
-	border-bottom: 1px solid gray;
+	background-color: var(--clr-darkblue);
+	border-bottom: 0.1em solid gray;
 	height: 3em;
-	transition: width height 0.5s ease-in;
+	transition: all 0.2s ease-in-out;
 	font-weight: 350;
-
-	color: #fff;
+	color: hsl(234, 39%, 85%);
 }
 
-.Todo:last-of-type {
-	border-bottom: none;
+.Todo:hover {
+	color: hsl(236, 33%, 92%);
 }
-
-/* .Todo:hover {
-} */
 
 input[type='checkbox'] {
 	visibility: hidden;
@@ -30,7 +26,7 @@ input[type='checkbox'] {
 .checkbox {
 	width: 1.2em;
 	height: 1.2em;
-	background-color: hsl(237, 14%, 26%);
+	background-color: var(--clr-darkblue);
 	margin: 0 0.8em;
 	border-radius: 100%;
 	border: 1px solid gray;

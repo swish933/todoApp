@@ -8,7 +8,7 @@ import Menu from './components/Menu';
 const App = () => {
 	return (
 		<div className='App bg-dark-mode'>
-			<div className='container b-red'>
+			<div className='container'>
 				<Header />
 				<Input />
 				<Todos />

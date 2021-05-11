@@ -14,34 +14,6 @@ const Todos = () => {
 			<Todo />
 			<Todo />
 			<Todo />
-			<Todo />
-			<Todo />
-			<Todo />
-			<Todo />
-			<Todo />
-			<Todo />
-			<Todo />
-			<Todo />
-			<Todo />
-			<Todo />
-			<Todo />
-			<Todo />
-			<Todo />
-			<Todo />
-			<Todo />
-			<Todo />
-			<Todo />
-			<Todo />
-			<Todo />
-			<Todo />
-			<Todo />
-			<Todo />
-			<Todo />
-			<Todo />
-			<Todo />
-			<Todo />
-			<Todo />
-			<Todo />
 		</div>
 	);
 };
