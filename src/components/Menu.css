@@ -52,6 +52,10 @@
 	color: var(--clr-lightblue);
 }
 
+.active-filter {
+	color: var(--clr-lightblue);
+}
+
 @media (min-width: 550px) {
 	.desktop-dash {
 		display: flex;
