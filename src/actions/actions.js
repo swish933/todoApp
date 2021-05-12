@@ -13,7 +13,7 @@ export const deleteId = (id) => ({
 
 export const toggleTodo = (id) => ({
 	type: TOGGLE_TODO,
-	id: id,
+	payload: { id: id },
 });
 
 export const setFilter = (filter) => ({
