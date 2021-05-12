@@ -6,7 +6,7 @@ export const addTodo = (content) => ({
 	payload: { content: content, id: v4() },
 });
 
-export const deleteId = (id) => ({
+export const deleteTodo = (id) => ({
 	type: DELETE_TODO,
 	payload: { id: id },
 });
@@ -18,5 +18,5 @@ export const toggleTodo = (id) => ({
 
 export const setFilter = (filter) => ({
 	type: SET_FILTER,
-	payload: filter,
+	payload: { filter: filter },
 });

@@ -20,10 +20,6 @@
 	font-size: 0.9em;
 }
 
-.upper div:nth-child(1) {
-	margin-right: 11em;
-}
-
 .mobile-menu {
 	margin-top: 2em;
 	display: grid;
@@ -35,7 +31,6 @@
 }
 
 .mobile-menu .todo-filters {
-	/* border: 1px solid slateblue; */
 	grid-column: 2 / span 1;
 }
 
@@ -48,8 +43,21 @@
 }
 
 .todo-filters p:hover,
-.upper div:nth-child(2):hover {
+.upper div:nth-child(2):hover,
+.desktop-dash div:last-child:hover {
 	color: var(--clr-lightblue);
+}
+
+.upper div {
+	width: 100%;
+}
+
+.counter p {
+	padding-left: 1.1em;
+}
+
+.clear p {
+	padding-left: 2em;
 }
 
 .active-filter {

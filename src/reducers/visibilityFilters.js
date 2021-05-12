@@ -7,7 +7,7 @@ const visibilityFilters = (state = initialState, action) => {
 	const { type, payload } = action;
 	switch (type) {
 		case SET_FILTER:
-			return payload;
+			return payload.filter;
 		default:
 			return state;
 	}

@@ -14,6 +14,7 @@ const Input = ({ addTodo }) => {
 	const onSubmit = (e) => {
 		e.preventDefault();
 		addTodo(input);
+		setInput('');
 	};
 	return (
 		<div className='Input'>

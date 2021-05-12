@@ -15,6 +15,24 @@
 	color: hsl(234, 39%, 85%);
 }
 
+.delete {
+	margin-left: auto;
+	margin-top: 0.9em;
+	width: 1.1em;
+	height: 1.1em;
+	margin-right: 1.5em;
+	visibility: hidden;
+	/* border: 1px solid salmon; */
+}
+
+.delete:hover {
+	color: red;
+}
+
+.Todo:hover .delete {
+	visibility: visible;
+}
+
 .Todo:hover {
 	color: hsl(236, 33%, 92%);
 }
@@ -37,7 +55,6 @@ input[type='checkbox'] {
 	display: block;
 	width: inherit;
 	height: inherit;
-	/* border: 1px solid salmon; */
 	border-radius: 100%;
 	transition: all 0.1s ease-in;
 	cursor: pointer;

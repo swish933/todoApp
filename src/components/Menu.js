@@ -22,10 +22,10 @@ const Menu = () => {
 			{/* mobile menu */}
 			<div className='mobile-dash'>
 				<div className='upper'>
-					<div>
+					<div className='counter'>
 						<p>5 items left</p>
 					</div>
-					<div>
+					<div className='clear'>
 						<p>Clear Completed</p>
 					</div>
 				</div>
