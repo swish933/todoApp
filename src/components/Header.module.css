@@ -18,8 +18,11 @@ img {
 	width: 1.3em;
 	height: 1.3em;
 	align-self: start;
+	transition: 0.5s;
 }
 
 img:hover {
 	cursor: pointer;
+	filter: invert(66%) sepia(18%) saturate(6525%) hue-rotate(224deg)
+		brightness(82%) contrast(88%);
 }

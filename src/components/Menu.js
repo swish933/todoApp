@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import styles from './Menu.module.css';
 
 const Menu = ({ todos, setFilter, deleteTodo }) => {
+	const active = todos.filter((todo) => !todo.completed).length;
 	const handleClear = () => {
 		const ids = todos.filter((todo) => todo.completed === true);
 		ids.forEach(({ id }) => {
@@ -21,7 +22,7 @@ const Menu = ({ todos, setFilter, deleteTodo }) => {
 			{/* desktop menu */}
 			<div className={styles.desktopDash}>
 				<div>
-					<p>5 items left</p>
+					<p>{active === 1 ? `${active} item left` : `${active} items left`}</p>
 				</div>
 				<div className={styles.todoFilters}>
 					<p onClick={handleFilter} title='all' className={styles.all}>
@@ -46,7 +47,9 @@ const Menu = ({ todos, setFilter, deleteTodo }) => {
 			<div className={styles.mobileDash}>
 				<div className={styles.upper}>
 					<div className={styles.counter}>
-						<p>5 items left</p>
+						<p>
+							{active === 1 ? `${active} item left` : `${active} items left`}
+						</p>
 					</div>
 					<div className={styles.clear}>
 						<p onClick={handleClear}>Clear Completed</p>

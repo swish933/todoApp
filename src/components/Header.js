@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Header.module.css';
-import moon from '../images/icon-moon.svg';
+// import moon from '../images/icon-moon.svg';
 import sun from '../images/icon-sun.svg';
 
 const Header = () => {
