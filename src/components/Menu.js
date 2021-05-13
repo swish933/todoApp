@@ -5,14 +5,17 @@ import PropTypes from 'prop-types';
 import styles from './Menu.module.css';
 
 const Menu = ({ todos, setFilter, deleteTodo }) => {
-	const handleClear = (e) => {
+	const handleClear = () => {
 		const ids = todos.filter((todo) => todo.completed === true);
 		ids.forEach(({ id }) => {
 			deleteTodo(id);
 		});
 	};
 
-	const handleFilter = () => {};
+	const handleFilter = (e) => {
+		setFilter(e.target.title);
+	};
+
 	return (
 		<div className={styles.Menu}>
 			{/* desktop menu */}
@@ -21,15 +24,15 @@ const Menu = ({ todos, setFilter, deleteTodo }) => {
 					<p>5 items left</p>
 				</div>
 				<div className={styles.todoFilters}>
-					<p onClick={handleFilter} name='all' className={styles.all}>
+					<p onClick={handleFilter} title='all' className={styles.all}>
 						All
 					</p>
-					<p onClick={handleFilter} name='active' className={styles.active}>
+					<p onClick={handleFilter} title='active' className={styles.active}>
 						Active
 					</p>
 					<p
 						onClick={handleFilter}
-						name='completed'
+						title='completed'
 						className={styles.completed}>
 						Completed
 					</p>
@@ -51,15 +54,15 @@ const Menu = ({ todos, setFilter, deleteTodo }) => {
 				</div>
 				<div className={styles.mobileMenu}>
 					<div className={styles.todoFilters}>
-						<p onClick={handleFilter} name='all' className={styles.all}>
+						<p onClick={handleFilter} title='all' className={styles.all}>
 							All
 						</p>
-						<p onClick={handleFilter} name='active' className={styles.active}>
+						<p onClick={handleFilter} title='active' className={styles.active}>
 							Active
 						</p>
 						<p
 							onClick={handleFilter}
-							name='completed'
+							title='completed'
 							className={styles.completed}>
 							Completed
 						</p>
