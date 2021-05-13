@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import styles from './Todo.module.css';
 import { connect } from 'react-redux';
 import { toggleTodo, deleteTodo } from '../actions/actions';
 import PropTypes from 'prop-types';
@@ -6,21 +7,21 @@ import deleteIcon from '../images/icon-cross.svg';
 
 const Todo = ({ content, id, completed, toggleTodo, deleteTodo }) => {
 	return (
-		<div className='Todo'>
-			<div className='checkbox'>
+		<div className={styles.Todo}>
+			<div className={styles.checkbox}>
 				<input
 					type='checkbox'
 					id={id}
 					checked={completed}
-					onClick={() => {
+					onChange={() => {
 						toggleTodo(id);
 					}}
 				/>
-				<label for={id}></label>
+				<label htmlFor={id}></label>
 			</div>
 			<p>{content}</p>
 			<img
-				className='delete'
+				className={styles.delete}
 				src={deleteIcon}
 				alt='delete icon'
 				onClick={() => {

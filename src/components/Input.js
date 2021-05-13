@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { connect } from 'react-redux';
 import { addTodo } from '../actions/actions';
 import PropTypes from 'prop-types';
-import './Input.css';
+import styles from './Input.module.css';
 
 const Input = ({ addTodo }) => {
 	const [input, setInput] = useState('');
@@ -17,8 +17,8 @@ const Input = ({ addTodo }) => {
 		setInput('');
 	};
 	return (
-		<div className='Input'>
-			<div className='disabled-checkbox'></div>
+		<div className={styles.Input}>
+			<div className={styles.disabledCheckbox}></div>
 			<form onSubmit={onSubmit}>
 				<input
 					type='text'

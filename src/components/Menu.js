@@ -1,39 +1,68 @@
 import React from 'react';
-import './Menu.css';
+import { connect } from 'react-redux';
+import { deleteTodo, setFilter } from '../actions/actions';
+import PropTypes from 'prop-types';
+import styles from './Menu.module.css';
 
-const Menu = () => {
+const Menu = ({ todos, setFilter, deleteTodo }) => {
+	const handleClear = (e) => {
+		const ids = todos.filter((todo) => todo.completed === true);
+		ids.forEach(({ id }) => {
+			deleteTodo(id);
+		});
+	};
+
+	const handleFilter = () => {};
 	return (
-		<div className='Menu'>
+		<div className={styles.Menu}>
 			{/* desktop menu */}
-			<div className='desktop-dash'>
+			<div className={styles.desktopDash}>
 				<div>
 					<p>5 items left</p>
 				</div>
-				<div className='todo-filters'>
-					<p className='.filter-all'>All</p>
-					<p className='.filter-active'>Active</p>
-					<p className='.filter-completed'>Completed</p>
+				<div className={styles.todoFilters}>
+					<p onClick={handleFilter} name='all' className={styles.all}>
+						All
+					</p>
+					<p onClick={handleFilter} name='active' className={styles.active}>
+						Active
+					</p>
+					<p
+						onClick={handleFilter}
+						name='completed'
+						className={styles.completed}>
+						Completed
+					</p>
 				</div>
 				<div>
-					<p>Clear Completed</p>
+					<p onClick={handleClear}>Clear Completed</p>
 				</div>
 			</div>
 
 			{/* mobile menu */}
-			<div className='mobile-dash'>
-				<div className='upper'>
-					<div className='counter'>
+			<div className={styles.mobileDash}>
+				<div className={styles.upper}>
+					<div className={styles.counter}>
 						<p>5 items left</p>
 					</div>
-					<div className='clear'>
-						<p>Clear Completed</p>
+					<div className={styles.clear}>
+						<p onClick={handleClear}>Clear Completed</p>
 					</div>
 				</div>
-				<div className='mobile-menu'>
-					<div className='todo-filters'>
-						<p className='.filter-all'>All</p>
-						<p className='.filter-active'>Active</p>
-						<p className='.filter-completed'>Completed</p>
+				<div className={styles.mobileMenu}>
+					<div className={styles.todoFilters}>
+						<p onClick={handleFilter} name='all' className={styles.all}>
+							All
+						</p>
+						<p onClick={handleFilter} name='active' className={styles.active}>
+							Active
+						</p>
+						<p
+							onClick={handleFilter}
+							name='completed'
+							className={styles.completed}>
+							Completed
+						</p>
 					</div>
 				</div>
 			</div>
@@ -41,4 +70,16 @@ const Menu = () => {
 	);
 };
 
-export default Menu;
+Menu.propTypes = {
+	todos: PropTypes.array.isRequired,
+	setFilter: PropTypes.func.isRequired,
+	deleteTodo: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = (state) => ({
+	todos: state.todos,
+});
+
+const mapDispatchToProps = { setFilter, deleteTodo };
+
+export default connect(mapStateToProps, mapDispatchToProps)(Menu);

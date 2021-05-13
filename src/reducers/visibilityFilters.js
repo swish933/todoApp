@@ -3,7 +3,7 @@ import { VISIBILITY_FILTERS } from '../constants';
 
 const initialState = VISIBILITY_FILTERS.ALL;
 
-const visibilityFilters = (state = initialState, action) => {
+const visibilityFilter = (state = initialState, action) => {
 	const { type, payload } = action;
 	switch (type) {
 		case SET_FILTER:
@@ -13,4 +13,4 @@ const visibilityFilters = (state = initialState, action) => {
 	}
 };
 
-export default visibilityFilters;
+export default visibilityFilter;
