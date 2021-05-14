@@ -3,3 +3,21 @@
 	border-top-right-radius: 0.3em;
 	overflow: hidden;
 }
+
+.lightMode {
+	box-shadow: 0 49px 15px gray;
+}
+
+.darkMode {
+	box-shadow: 0 49px 15px rgb(20, 20, 20);
+}
+
+@media (min-width: 550px) {
+	.lightMode {
+		box-shadow: 0 65px 15px gray;
+	}
+
+	.darkMode {
+		box-shadow: 0 65px 22px rgb(0, 0, 0);
+	}
+}
