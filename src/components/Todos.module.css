@@ -4,20 +4,12 @@
 	overflow: hidden;
 }
 
-.lightMode {
-	box-shadow: 0 49px 15px gray;
-}
-
-.darkMode {
-	box-shadow: 0 49px 15px rgb(20, 20, 20);
+.shadow {
+	box-shadow: 0 49px 15px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 @media (min-width: 550px) {
-	.lightMode {
-		box-shadow: 0 65px 15px gray;
-	}
-
-	.darkMode {
-		box-shadow: 0 65px 22px rgb(0, 0, 0);
+	.shadow {
+		box-shadow: 0 65px 15px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	}
 }

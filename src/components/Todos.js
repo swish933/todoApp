@@ -4,7 +4,7 @@ import Menu from './Menu';
 import styles from './Todos.module.css';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { VISIBILITY_FILTERS, THEME } from '../constants';
+import { VISIBILITY_FILTERS } from '../constants';
 import cx from 'classnames';
 
 const getTodobyFilter = (todos, filter) => {
@@ -21,11 +21,7 @@ const getTodobyFilter = (todos, filter) => {
 const Todos = ({ todos, filter, theme }) => {
 	return (
 		<Fragment>
-			<div
-				className={cx(styles.Todos, {
-					[styles.darkMode]: theme === THEME.DARK,
-					[styles.lightMode]: theme === THEME.LIGHT,
-				})}>
+			<div className={cx(styles.Todos, styles.shadow)}>
 				{getTodobyFilter(todos, filter).map((todo) => {
 					return (
 						<Todo
