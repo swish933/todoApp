@@ -4,11 +4,17 @@ import { connect } from 'react-redux';
 import { toggleTodo, deleteTodo } from '../actions/actions';
 import PropTypes from 'prop-types';
 import deleteIcon from '../images/icon-cross.svg';
+import cx from 'classnames';
+import { THEME } from '../constants';
 
-const Todo = ({ content, id, completed, toggleTodo, deleteTodo }) => {
+const Todo = ({ content, id, completed, toggleTodo, deleteTodo, theme }) => {
 	return (
-		<div className={styles.Todo}>
-			<div className={styles.checkbox}>
+		<div
+			className={cx(styles.Todo, {
+				[styles.darkMode]: theme === THEME.DARK,
+				[styles.lightMode]: theme === THEME.LIGHT,
+			})}>
+			<div className={cx(styles.checkbox)}>
 				<input
 					type='checkbox'
 					id={id}
@@ -34,8 +40,13 @@ const Todo = ({ content, id, completed, toggleTodo, deleteTodo }) => {
 
 Todo.propTypes = {
 	toggleTodo: PropTypes.func.isRequired,
+	theme: PropTypes.string.isRequired,
 };
+
+const mapStateToProps = (state) => ({
+	theme: state.theme,
+});
 
 const mapDispatchToProps = { toggleTodo, deleteTodo };
 
-export default connect(null, mapDispatchToProps)(Todo);
+export default connect(mapStateToProps, mapDispatchToProps)(Todo);

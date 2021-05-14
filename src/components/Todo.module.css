@@ -1,8 +1,6 @@
 .Todo {
 	display: flex;
 	align-items: center;
-	background-color: var(--clr-darkblue);
-	border-bottom: 0.1em solid gray;
 	height: 3em;
 	transition: all 0.2s ease-in-out;
 	font-weight: 350;
@@ -20,7 +18,6 @@
 	height: 1.1em;
 	margin-right: 1.5em;
 	visibility: hidden;
-	/* border: 1px solid salmon; */
 }
 
 .delete:hover {
@@ -32,10 +29,6 @@
 	visibility: visible;
 }
 
-.Todo:hover {
-	color: hsl(236, 33%, 92%);
-}
-
 input[type='checkbox'] {
 	visibility: hidden;
 }
@@ -43,7 +36,6 @@ input[type='checkbox'] {
 .checkbox {
 	width: 1.2em;
 	height: 1.2em;
-	background-color: var(--clr-darkblue);
 	margin: 0 0.8em;
 	border-radius: 100%;
 	border: 1px solid gray;
@@ -69,4 +61,20 @@ input[type='checkbox'] {
 
 	background-repeat: no-repeat, no-repeat;
 	background-position: center center, center center;
+}
+
+.Todo:hover {
+	color: hsl(235, 35%, 50%);
+}
+
+.darkMode {
+	background-color: var(--clr-darkblue);
+	color: var(--clr-lightgray);
+	border-bottom: 0.1em solid gray;
+}
+
+.lightMode {
+	background-color: var(--bg-white);
+	color: var(--bg-black);
+	border-bottom: 0.1em solid lightgray;
 }
