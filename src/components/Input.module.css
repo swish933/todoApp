@@ -37,7 +37,6 @@ form {
 	height: 2.5em;
 	width: inherit;
 	outline-color: hsl(235, 28%, 76%);
-	outline-width: 1em;
 	transition: 0.3s;
 	font-family: 'Josefin Sans', sans-serif;
 	font-size: 1em;
