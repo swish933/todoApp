@@ -40,6 +40,7 @@
 .upper div:nth-child(2):hover,
 .desktopDash div:last-child:hover {
 	color: var(--clr-lightblue);
+	cursor: pointer;
 }
 
 .upper div {
@@ -54,7 +55,7 @@
 	padding-left: 2em;
 }
 
-.activeFilter {
+.active {
 	color: var(--clr-lightblue);
 }
 

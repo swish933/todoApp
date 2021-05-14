@@ -4,9 +4,9 @@ import { deleteTodo, setFilter } from '../actions/actions';
 import PropTypes from 'prop-types';
 import styles from './Menu.module.css';
 import cx from 'classnames';
-import { THEME } from '../constants';
+import { THEME, VISIBILITY_FILTERS } from '../constants';
 
-const Menu = ({ todos, setFilter, deleteTodo, theme }) => {
+const Menu = ({ todos, setFilter, deleteTodo, theme, filter }) => {
 	const active = todos.filter((todo) => !todo.completed).length;
 	const handleClear = () => {
 		const ids = todos.filter((todo) => todo.completed === true);
@@ -31,16 +31,28 @@ const Menu = ({ todos, setFilter, deleteTodo, theme }) => {
 					<p>{active === 1 ? `${active} item left` : `${active} items left`}</p>
 				</div>
 				<div className={styles.todoFilters}>
-					<p onClick={handleFilter} title='all' className={styles.all}>
+					<p
+						onClick={handleFilter}
+						title='all'
+						className={cx({
+							[styles.active]: filter === VISIBILITY_FILTERS.ALL,
+						})}>
 						All
 					</p>
-					<p onClick={handleFilter} title='active' className={styles.active}>
+					<p
+						onClick={handleFilter}
+						title='active'
+						className={cx({
+							[styles.active]: filter === VISIBILITY_FILTERS.INCOMPLETE,
+						})}>
 						Active
 					</p>
 					<p
 						onClick={handleFilter}
 						title='completed'
-						className={styles.completed}>
+						className={cx({
+							[styles.active]: filter === VISIBILITY_FILTERS.COMPLETED,
+						})}>
 						Completed
 					</p>
 				</div>
@@ -71,16 +83,28 @@ const Menu = ({ todos, setFilter, deleteTodo, theme }) => {
 						[styles.lightMode]: theme === THEME.LIGHT,
 					})}>
 					<div className={styles.todoFilters}>
-						<p onClick={handleFilter} title='all' className={styles.all}>
+						<p
+							onClick={handleFilter}
+							title='all'
+							className={cx({
+								[styles.active]: filter === VISIBILITY_FILTERS.ALL,
+							})}>
 							All
 						</p>
-						<p onClick={handleFilter} title='active' className={styles.active}>
+						<p
+							onClick={handleFilter}
+							title='active'
+							className={cx({
+								[styles.active]: filter === VISIBILITY_FILTERS.INCOMPLETE,
+							})}>
 							Active
 						</p>
 						<p
 							onClick={handleFilter}
 							title='completed'
-							className={styles.completed}>
+							className={cx({
+								[styles.active]: filter === VISIBILITY_FILTERS.COMPLETED,
+							})}>
 							Completed
 						</p>
 					</div>
@@ -94,14 +118,8 @@ Menu.propTypes = {
 	todos: PropTypes.array.isRequired,
 	setFilter: PropTypes.func.isRequired,
 	deleteTodo: PropTypes.func.isRequired,
-	theme: PropTypes.string.isRequired,
 };
-
-const mapStateToProps = (state) => ({
-	todos: state.todos,
-	theme: state.theme,
-});
 
 const mapDispatchToProps = { setFilter, deleteTodo };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Menu);
+export default connect(null, mapDispatchToProps)(Menu);

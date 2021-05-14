@@ -1,7 +1,7 @@
 :root {
 	--clr-darkblue: hsl(235, 24%, 19%);
 	--bg-black: hsl(235, 21%, 11%);
-	--bg-white: #fff;
+	--bg-white: hsl(0, 0%, 98%);
 	--clr-lightgray: hsl(236, 33%, 92%);
 	--clr-lightblue: hsl(220, 98%, 61%);
 }
@@ -47,7 +47,7 @@ body {
 	background-repeat: no-repeat;
 	background-size: 100% 25%;
 	background-attachment: fixed;
-	background-color: var(--bg-white);
+	background-color: var(--clr-lightgray);
 }
 
 @media (min-width: 500px) {

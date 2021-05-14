@@ -3,7 +3,6 @@ import './App.css';
 import Header from './components/Header';
 import Todos from './components/Todos';
 import Input from './components/Input';
-import Menu from './components/Menu';
 import cx from 'classnames';
 import { connect } from 'react-redux';
 
@@ -19,7 +18,6 @@ const App = ({ theme }) => {
 				<Header />
 				<Input />
 				<Todos />
-				<Menu />
 			</div>
 		</div>
 	);
