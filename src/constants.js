@@ -3,3 +3,8 @@ export const VISIBILITY_FILTERS = {
 	COMPLETED: 'completed',
 	INCOMPLETE: 'active',
 };
+
+export const THEME = {
+	LIGHT: 'lightMode',
+	DARK: 'darkMode',
+};

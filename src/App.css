@@ -1,6 +1,7 @@
 :root {
 	--clr-darkblue: hsl(235, 24%, 19%);
 	--bg-black: hsl(235, 21%, 11%);
+	--bg-white: #fff;
 	--clr-lightgray: hsl(236, 33%, 92%);
 	--clr-lightblue: hsl(220, 98%, 61%);
 }
@@ -10,53 +11,51 @@
 }
 
 html,
-body {
+body,
+#root {
 	height: 100%;
 }
 
 body {
-	background-color: var(--bg-black);
 	margin: 0;
 	font-family: 'Josefin Sans', sans-serif;
 }
 
 .App {
-	width: 100%;
+	min-height: 100%;
 	display: flex;
 	justify-content: center;
-}
-
-.b-red {
-	border: 1px solid red;
 }
 
 .container {
 	margin-top: 3em;
 	width: 90%;
-	height: 100%;
 	padding: 1em;
 	max-width: 35em;
 }
 
-.bg-dark-mode {
+.darkMode {
 	background-image: url(./images/bg-mobile-dark.jpg);
 	background-repeat: no-repeat;
 	background-size: 100% 25%;
 	background-attachment: fixed;
+	background-color: var(--bg-black);
 }
 
-.bg-light-mode {
+.lightMode {
 	background-image: url(./images/bg-mobile-light.jpg);
 	background-repeat: no-repeat;
 	background-size: 100% 25%;
+	background-attachment: fixed;
+	background-color: var(--bg-white);
 }
 
 @media (min-width: 500px) {
-	.bg-dark-mode {
+	.darkMode {
 		background-image: url(./images/bg-desktop-dark.jpg);
 		background-size: 100% 40%;
 	}
-	.bg-light-mode {
+	.lightMode {
 		background-image: url(./images/bg-desktop-light.jpg);
 		background-size: 100% 40%;
 	}

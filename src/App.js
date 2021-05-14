@@ -1,27 +1,32 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
-import { Provider } from 'react-redux';
-import store from './store';
 import Header from './components/Header';
 import Todos from './components/Todos';
 import Input from './components/Input';
 import Menu from './components/Menu';
+import cx from 'classnames';
+import { connect } from 'react-redux';
 
-const App = () => {
-	// const [theme, setTheme] = useState('dark');
-
+const App = ({ theme }) => {
 	return (
-		<Provider store={store}>
-			<div className='App bg-dark-mode'>
-				<div className='container'>
-					<Header />
-					<Input />
-					<Todos />
-					<Menu />
-				</div>
+		<div
+			className={cx({
+				App: true,
+				darkMode: theme === 'darkMode',
+				lightMode: theme === 'lightMode',
+			})}>
+			<div className='container'>
+				<Header />
+				<Input />
+				<Todos />
+				<Menu />
 			</div>
-		</Provider>
+		</div>
 	);
 };
 
-export default App;
+const mapStateToProps = (state) => ({
+	theme: state.theme,
+});
+
+export default connect(mapStateToProps, null)(App);
