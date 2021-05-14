@@ -3,8 +3,10 @@ import { connect } from 'react-redux';
 import { addTodo } from '../actions/actions';
 import PropTypes from 'prop-types';
 import styles from './Input.module.css';
+import cx from 'classnames';
+import { THEME } from '../constants';
 
-const Input = ({ addTodo }) => {
+const Input = ({ addTodo, theme }) => {
 	const [input, setInput] = useState('');
 
 	const onChange = (e) => {
@@ -17,8 +19,12 @@ const Input = ({ addTodo }) => {
 		setInput('');
 	};
 	return (
-		<div className={styles.Input}>
-			<div className={styles.disabledCheckbox}></div>
+		<div
+			className={cx(styles.Input, {
+				[styles.darkMode]: theme === THEME.DARK,
+				[styles.lightMode]: theme === THEME.LIGHT,
+			})}>
+			<div className={cx(styles.disabledCheckbox)}></div>
 			<form onSubmit={onSubmit}>
 				<input
 					type='text'
@@ -26,6 +32,10 @@ const Input = ({ addTodo }) => {
 					name='todoInput'
 					value={input}
 					onChange={onChange}
+					className={cx({
+						[styles.darkMode]: theme === THEME.DARK,
+						[styles.lightMode]: theme === THEME.LIGHT,
+					})}
 				/>
 				<input type='submit' hidden />
 			</form>
@@ -35,6 +45,11 @@ const Input = ({ addTodo }) => {
 
 Input.propTypes = {
 	addTodo: PropTypes.func.isRequired,
+	theme: PropTypes.string.isRequired,
 };
 
-export default connect(null, { addTodo })(Input);
+const mapStateToProps = (state) => ({
+	theme: state.theme,
+});
+
+export default connect(mapStateToProps, { addTodo })(Input);

@@ -1,5 +1,12 @@
+:root {
+	--clr-darkblue: hsl(235, 24%, 19%);
+	--bg-black: hsl(235, 21%, 11%);
+	--bg-white: #fff;
+	--clr-lightgray: hsl(236, 33%, 92%);
+	--clr-lightblue: hsl(220, 98%, 61%);
+}
+
 .Input {
-	background-color: var(--clr-darkblue);
 	border: var(--clr-darkblue);
 	display: flex;
 	align-items: center;
@@ -22,7 +29,6 @@
 .disabledCheckbox {
 	width: 1.2em;
 	height: 1.2em;
-	background-color: var(--clr-darkblue);
 	margin: 0 0.8em;
 	border-radius: 100%;
 	border: 1px solid gray;
@@ -34,15 +40,23 @@ form {
 }
 
 .Input input[type='text'] {
-	background-color: var(--clr-darkblue);
 	border: none;
 	flex-basis: 92%;
 	height: 2.5em;
 	width: inherit;
 	outline-color: hsl(235, 28%, 76%);
 	outline-width: 1em;
-	color: whitesmoke;
 	transition: 0.3s;
 	font-family: 'Josefin Sans', sans-serif;
 	font-size: 1em;
+}
+
+.darkMode {
+	background-color: var(--clr-darkblue);
+	color: var(--clr-lightgray);
+}
+
+.lightMode {
+	background-color: var(--bg-white);
+	color: var(--bg-black);
 }
