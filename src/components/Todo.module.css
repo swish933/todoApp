@@ -2,9 +2,9 @@
 	display: flex;
 	align-items: center;
 	height: 3em;
-	transition: all 0.2s ease-in-out;
 	font-weight: 350;
 	color: hsl(234, 39%, 85%);
+	cursor: pointer;
 }
 
 .completed {
@@ -13,11 +13,12 @@
 
 .delete {
 	margin-left: auto;
-	margin-top: 0.9em;
-	width: 1.1em;
-	height: 1.1em;
+	margin-top: 0.2em;
+	width: 1.4em;
+	height: 1.4em;
 	margin-right: 1.5em;
 	visibility: hidden;
+	/* border: 1px solid salmon; */
 }
 
 .delete:hover {

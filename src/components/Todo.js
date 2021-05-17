@@ -8,12 +8,17 @@ import cx from 'classnames';
 import { THEME } from '../constants';
 
 const Todo = ({ content, id, completed, toggleTodo, deleteTodo, theme }) => {
+	const onClick = () => {
+		toggleTodo(id);
+	};
+
 	return (
 		<div
 			className={cx(styles.Todo, {
 				[styles.darkMode]: theme === THEME.DARK,
 				[styles.lightMode]: theme === THEME.LIGHT,
-			})}>
+			})}
+			onClick={onClick}>
 			<div className={cx(styles.checkbox)}>
 				<input
 					type='checkbox'
@@ -26,14 +31,15 @@ const Todo = ({ content, id, completed, toggleTodo, deleteTodo, theme }) => {
 				<label htmlFor={id}></label>
 			</div>
 			<p>{content}</p>
-			<img
-				className={styles.delete}
-				src={deleteIcon}
-				alt='delete icon'
-				onClick={() => {
-					deleteTodo(id);
-				}}
-			/>
+			<div className={styles.delete}>
+				<img
+					src={deleteIcon}
+					alt='delete icon'
+					onClick={() => {
+						deleteTodo(id);
+					}}
+				/>
+			</div>
 		</div>
 	);
 };
@@ -41,6 +47,7 @@ const Todo = ({ content, id, completed, toggleTodo, deleteTodo, theme }) => {
 Todo.propTypes = {
 	toggleTodo: PropTypes.func.isRequired,
 	theme: PropTypes.string.isRequired,
+	deleteTodo: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
