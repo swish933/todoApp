@@ -30,7 +30,9 @@ const Todo = ({ content, id, completed, toggleTodo, deleteTodo, theme }) => {
 				/>
 				<label htmlFor={id}></label>
 			</div>
-			<p>{content}</p>
+			<p className={cx({ [styles.completed]: completed === true })}>
+				{content}
+			</p>
 			<div className={styles.delete}>
 				<img
 					src={deleteIcon}

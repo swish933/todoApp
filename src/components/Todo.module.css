@@ -9,6 +9,7 @@
 
 .completed {
 	text-decoration: line-through;
+	filter: brightness(65%);
 }
 
 .delete {
@@ -66,6 +67,10 @@ input[type='checkbox'] {
 
 .Todo:hover {
 	color: hsl(235, 35%, 50%);
+}
+
+.Todo:hover p {
+	filter: brightness(100%);
 }
 
 .darkMode {
